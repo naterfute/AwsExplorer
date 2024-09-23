@@ -8,7 +8,6 @@ class awsClass:
     def __init__(self):
         self.config = self.load_config()
         self.connect()
-        self.get_hosted_zone()
 
     def load_config(self):
         with open('.config.yaml', 'r') as f:
@@ -43,7 +42,7 @@ def connection_test():
 @app.command('hostedTest')
 def hosted_zone_test():
     testing = awsClass()
-    print(testing.zone)
+    print(testing.get_hosted_zone())
 
 
 if __name__ == "__main__":
