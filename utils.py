@@ -7,8 +7,8 @@ app = typer.Typer(no_args_is_help=True, add_completion=False)
 class awsClass:
     def __init__(self):
         self.config = self.load_config()
-        self.get_hosted_zone()
         self.connect()
+        self.get_hosted_zone()
 
     def load_config(self):
         with open('.config.yaml', 'r') as f:

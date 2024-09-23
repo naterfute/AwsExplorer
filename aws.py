@@ -27,7 +27,7 @@ def retrieve_hosted_zone(zoneid: str):
 @app.command('getRecordSet')
 def get_record_set(name_to_match: str):
 
-    for record_set in zone.record_sets:
+    for record_set in aws.zone.record_sets:
         if record_set.name == name_to_match:
             print(record_set)
             # Stopping early may save some additional HTTP requests,
